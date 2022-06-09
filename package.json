@@ -2,7 +2,7 @@
   "name": "verilog-align-tool",
   "displayName": "verilog align tool",
   "description": "a tool for verilog code alignment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Narziss",
   "license": "LICENSE.txt",
   "repository": {
@@ -16,21 +16,31 @@
     "Formatters"
   ],
   "activationEvents": [
-    "onCommand:verilog.align.tool"
+    "onCommand:verilog.align.tool",
+    "onCommand:verilog.align.tool.withBracket"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "verilog.align.tool",
-        "title": "verilog align tool"
+        "title": "verilog align tool:align"
+      },
+      {
+        "command": "verilog.align.tool.withBracket",
+        "title": "verilog align tool:alignWithBracket"
       }
     ],
     "keybindings": [
       {
         "command": "verilog.align.tool",
-        "key": "alt+shift+a",
+        "key": "alt+shift+t",
         "when": "editorHasSelection"
+      },
+      {
+        "command": "verilog.align.tool.withBracket",
+        "key": "alt+shift+b",
+        "when": "editorTextFocus"
       }
     ]
   },
